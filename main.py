@@ -141,9 +141,17 @@ while(True):
     secLT = loTime[5]
     secLT = "{0:0>2}".format(secLT)
 
+
     dateDir = "/sd/"+str(yearLT)+str(monLT)+str(dayLT)
     dateFileNa = str(yearLT)+str(monLT)+str(dayLT)+str(hourLT)
     dateFull = str(yearLT)+str(monLT)+str(dayLT)+str(hourLT)+str(minLT)+str(secLT)
+
+    #directory path create
+    try:
+        os.listdir(dateDir)
+    except:
+        os.mkdir(dateDir)
+
     print(dateFull)
 
     fullpath = dateDir + "/" + dateFileNa + ".txt"
